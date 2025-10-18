@@ -1,0 +1,293 @@
+
+/**
+ * @fileoverview Estilos principales de la aplicación de Algoritmo Genético
+ * 
+ * Este archivo contiene todos los estilos CSS para la aplicación de optimización
+ * de subconjuntos usando algoritmos genéticos. Define el layout principal, 
+ * estilos de componentes y diseño responsivo.
+ * 
+ * Estructura de estilos:
+ * 1. Estilos globales (body, contenedores principales)
+ * 2. Header y navegación
+ * 3. Layout principal y columnas
+ * 4. Paneles de contenido (configuración, resultados, progreso)
+ * 5. Componentes de interfaz (botones, inputs, cards)
+ * 6. Diseño responsivo (media queries)
+ * 
+ * @author Roymar Castillo
+ * @author Dilan Zamora
+ * @version 1.0.0
+ */
+
+/* ========================================================================
+   ESTILOS GLOBALES Y CONTENEDORES PRINCIPALES
+   ======================================================================== */
+
+/**
+ * Estilos base del body
+ * Define la tipografía, colores y layout base de toda la aplicación
+ */
+body {
+  background: #f6f8fa; /* Fondo gris claro para toda la aplicación */
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Tipografía moderna y legible */
+  color: #1a1a1a; /* Color de texto principal oscuro */
+}
+
+/**
+ * Contenedor principal de la aplicación
+ * Establece el layout vertical y centrado para toda la interfaz
+ */
+.app-desktop-container {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f8fa;
+}
+
+/* ========================================================================
+   HEADER Y NAVEGACIÓN
+   ======================================================================== */
+
+/**
+ * Estilos del header principal
+ * Contiene el título y subtítulo de la aplicación
+ */
+header {
+  width: 134.3%; 
+  background: #1a2233; 
+  color: #fff;
+  padding: 0.5rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/**
+ * Título principal del header
+ */
+header h1 {
+  margin: 0;
+  font-size: 3rem; 
+  letter-spacing: 1.5px; 
+  font-weight: 700;
+}
+
+/**
+ * Subtítulo del header
+ */
+header p {
+  margin: 0.1rem 0 0 0;
+  font-size: 1.2rem;
+  color: #e0e6f0;
+  font-weight: 400;
+}
+
+/* ========================================================================
+   LAYOUT PRINCIPAL Y COLUMNAS
+   ======================================================================== */
+
+/**
+ * Contenedor principal del contenido
+ * Define el layout de dos columnas: configuración/resultados + progreso
+ */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem; 
+  margin: 0.5rem auto;
+  width: 90vw;
+  max-width: 1400px;
+  justify-content: center;
+  align-items: stretch; 
+  padding: 1rem;
+  height: calc(100vh - 140px); 
+}
+
+/* ========================================================================
+   PANELES DE CONTENIDO Y COMPONENTES
+   ======================================================================== */
+
+/**
+ * Estilos base para todas las tarjetas/paneles
+ * Define la apariencia visual común de los contenedores de contenido
+ */
+.card {
+  background: #fff; 
+  border-radius: 12px; 
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 1.5rem 1.25rem;
+  border: 1.5px solid #d1d5db; 
+}
+
+/**
+ * Columna izquierda que contiene configuración y resultados
+ * Layout vertical con ancho fijo
+ */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; 
+  flex: 0 0 400px; 
+  min-width: 380px;
+  max-width: 450px;
+  height: 100%;
+}
+
+.controls-panel {
+  flex: 0 0 auto;
+}
+
+.solution-panel {
+  flex: 0 0 auto;
+}
+
+.progress-panel {
+  flex: 0 0 auto;
+  background: #1a2233;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  min-width: 600px;
+  max-width: 800px;
+}
+
+.controls-panel {
+  border: 2px solid #d1d5db;
+}
+
+.controls-panel button,
+.controls-panel input[type="number"] {
+  background: #fff;
+  color: #1a2233;
+  border: 1.5px solid #bfc9d1;
+  font-weight: 600;
+}
+
+.controls-panel button:hover:enabled {
+  background: #f0f0f0;
+  color: #1a2233;
+}
+
+.controls-panel button:disabled {
+  background: #e3eaf3;
+  color: #bfc9d1;
+}
+
+.solution-panel {
+  border: 2px solid #d1d5db;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: inherit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2d3a4a;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #bfc9d1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.number-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.number-set span {
+  background: #1a2233;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+button {
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1.5px solid #bfc9d1;
+  background: #fff;
+  color: #1a2233;
+}
+
+button:hover:enabled {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (min-width: 1280px) {
+  .main-content {
+    max-width: 1600px;
+    gap: 10rem;
+  }
+  
+  .card {
+    min-width: 420px;
+    max-width: 650px;
+    padding: 3rem 2.5rem;
+
+  }
+  
+  header h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    width: 95vw;
+    max-width: 600px;
+  }
+  
+  .card {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  .controls-panel {
+    border-right: none;
+    border-bottom: 2px solid #d1d5db;
+  }
+  
+  .results-panel {
+    border-left: none;
+    border-top: 2px solid #1a2233;
+  }
+}
+
